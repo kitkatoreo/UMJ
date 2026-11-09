@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Courses | UMJ Student Portal</title>
+  <meta name="description" content="Courses registered this semester with lecturers, timetable and attendance.">
+  <meta name="keywords" content="UMJ, student portal, My Courses">
+  <meta name="author" content="IMS566 Individual Project">
+  <meta name="theme-color" content="#0b1f5c">
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../css/style.css?v=3" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="app-navbar"></header>
+<main class="container pb-2" id="main">
+
+  <section class="page-head d-flex flex-wrap justify-content-between align-items-end gap-2"><div><h1 class="h2">My courses</h1><p>Semester 4 registration, timetable and attendance.</p></div><a class="btn btn-primary" href="registration.html"><i class="bi bi-plus-circle me-1"></i>Register new course</a></section>
+  <section class="row g-3 mb-3" aria-label="Course summary">
+    <div class="col-lg-8"><div class="panel">
+      <div class="row g-2 mb-3">
+        <div class="col-sm-7"><label class="visually-hidden" for="q">Search courses</label>
+          <input id="q" class="form-control" type="search" placeholder="Search by code, name or lecturer"></div>
+        <div class="col-sm-5"><label class="visually-hidden" for="cat">Filter by category</label>
+          <select id="cat" class="form-select"><option value="">All categories</option><option>Core</option><option>Elective</option><option>University</option></select></div>
+      </div>
+      <div class="table-responsive-sm">
+        <table class="table table-hover umj-table stack-table">
+          <caption class="visually-hidden">Registered courses</caption>
+          <thead><tr><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Credit hours</th><th scope="col">Timetable</th><th scope="col">Attendance</th><th scope="col">Status</th></tr></thead>
+          <tbody id="courseRows"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="text-muted text-center my-4 d-none">No courses match your search. Clear the filters to see all courses.</p>
+    </div></div>
+    <div class="col-lg-4"><div class="panel">
+      <h2>Credit hours by category</h2><p class="sub" id="creditSub"></p>
+      <div class="chart-box"><canvas id="creditChart" role="img" aria-label="Doughnut chart of credit hours by course category"></canvas></div></div></div>
+  </section>
+</main>
+<div id="app-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="../js/data.js?v=3"></script>
+<script src="../js/app.js?v=3"></script>
+<script src="../js/courses.js?v=3"></script>
+</body>
+</html>
